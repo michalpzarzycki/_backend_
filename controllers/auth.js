@@ -12,7 +12,7 @@ const expressJwt = require('express-jwt')
     }
     const { name, email, password } = req.body;
     let username = shortId.generate();
-    let profile = `${process.env.CLIEnT_URL}/profile/${username}`
+    let profile = `${process.env.CLIENT_URL}/profile/${username}`
 
     let newUser = new User({name, email, password, profile, username})
     newUser.save((err, success) => {
